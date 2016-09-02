@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cool Project</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title welcome">1K Quest</h1>
+
+      <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <p class="title">Quest: <span id="stat-quest"></span></p>
+          </article>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <p class="title">Bench: <span id="stat-bench"></span></p>
+          </article>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <p class="title">Squat: <span id="stat-squat"></span></p>
+          </article>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <p class="title">Dead: <span id="stat-dead"></span></p>
+          </article>
+        </div>
+      </div>
+
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical is-9">
+          <div class="tile">
+            <div class="tile is-parent">
+              <article class="tile is-child box">
+                <div class="content">
+                  <h3>General Stats</h3>
+                  <ul class="menu-list">
+                    <li>
+                      Total Lifted: 
+                      <span id="stat-lifted"></span>lbs
+                    </li>
+                    <li>
+                      Number of Workouts: 
+                      <span id="stat-workouts"></span>
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+            <div class="tile is-8 is-vertical">
+              <div class="tile is-parent">
+                <article class="tile is-child box">
+                  <canvas id="chart-quest" width="550" height="300"></canvas>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="tile">
+            <div class="tile is-8 is-parent">
+              <article class="tile is-child box">
+                <canvas id="chart-weight" width="550" height="300"></canvas>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child box">
+                <p class="title">More Info</p>
+                <div class="content">
+                  <p>...</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <div class="content">
+              <p class="title">About</p>
+              <p class="subtitle">What is 1k Quest?</p>
+              <div class="content">
+                <p>....</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+    </div>
+    <script src="js/bundle.min.js"></script>
+  </body>
+</html>
