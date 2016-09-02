@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "This is a basic starter template.",
   "scripts": {
-    "test": "mocha --compilers js:babel-register || true",
     "deploy": "surge -p \"$(npm prefix)/app\" -d \"$(whoami | tr '[:upper:]' '[:lower:]')-${PWD##*/}.surge.sh\"",
     "lint": "eslint src/js || true"
   },
