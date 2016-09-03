@@ -4199,6 +4199,9 @@ a, a:hover {
   .footer a:not(.icon):hover, .footer a:visited:not(.icon):hover {
     border-bottom: 1px solid #4B8F8C; }
 
+.nbm {
+  margin-bottom: 0; }
+
 .notification.is-primary {
   padding: 20px; }
 
