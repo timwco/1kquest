@@ -3,73 +3,54 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Cool Project</title>
+    <title>1K Quest</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <div class="container">
-      <h1 class="title welcome">1K Quest</h1>
-
+      <div class="logo">
+        <img src="images/logo.png" alt="1k Quest">
+      </div>
+      <div id="progress"></div>
       <div class="tile is-ancestor">
         <div class="tile is-parent">
-          <article class="tile is-child box">
-            <p class="title">Quest: <span id="stat-quest"></span></p>
+          <article class="tile is-child box notification is-primary">
+            <p class="title">TOTAL: <strong id="stat-quest"></strong></p>
           </article>
         </div>
         <div class="tile is-parent">
           <article class="tile is-child box">
-            <p class="title">Bench: <span id="stat-bench"></span></p>
+            <p class="title">Bench: <strong id="stat-bench"></strong></p>
           </article>
         </div>
         <div class="tile is-parent">
           <article class="tile is-child box">
-            <p class="title">Squat: <span id="stat-squat"></span></p>
+            <p class="title">Squat: <strong id="stat-squat"></strong></p>
           </article>
         </div>
         <div class="tile is-parent">
           <article class="tile is-child box">
-            <p class="title">Dead: <span id="stat-dead"></span></p>
+            <p class="title">Dead: <strong id="stat-dead"></strong></p>
           </article>
         </div>
       </div>
 
       <div class="tile is-ancestor">
-        <div class="tile is-vertical is-9">
-          <div class="tile">
-            <div class="tile is-parent">
-              <article class="tile is-child box">
-                <div class="content">
-                  <h3>General Stats</h3>
-                  <ul class="menu-list">
-                    <li><span id="stat-lifted"></span> lifted.</li>
-                    <li><span id="stat-workouts"></span> workouts completed.</li>
-                  </ul>
-                </div>
-              </article>
+        <div class="tile is-parent is-3">
+          <article class="tile is-child box">
+            <div class="content">
+              <h3>General Stats</h3>
+              <ul class="menu-list">
+                <li><strong id="stat-lifted"></strong> lifted.</li>
+                <li><strong id="stat-workouts"></strong> workouts completed.</li>
+              </ul>
             </div>
-            <div class="tile is-8 is-vertical">
-              <div class="tile is-parent">
-                <article class="tile is-child box">
-                  <canvas id="chart-quest" width="550" height="300"></canvas>
-                </article>
-              </div>
-            </div>
-          </div>
-          <div class="tile">
-            <div class="tile is-8 is-parent">
-              <article class="tile is-child box">
-                <canvas id="chart-weight" width="550" height="300"></canvas>
-              </article>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child box">
-                <p class="title">More Info</p>
-                <div class="content">
-                  <p>...</p>
-                </div>
-              </article>
-            </div>
-          </div>
+          </article>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <canvas id="chart-quest" width="550" height="300"></canvas>
+          </article>
         </div>
         <div class="tile is-parent">
           <article class="tile is-child box">
@@ -77,14 +58,27 @@
               <p class="title">About</p>
               <p class="subtitle">What is 1k Quest?</p>
               <div class="content">
-                <p>....</p>
+                <p>In the fall of 2015, I decided I wanted to get stronger. I used to lift weights in high school, but gave it up during my freshman year of college. When I first went back, I didn't really have anything to keep me motivated. That's when I decided i wanted to lift 1000lbs between bench press, squat and dead lifts.</p>
+                <p>This is my journey.</p>
               </div>
             </div>
           </article>
         </div>
       </div>
-
     </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>
+            <strong>1K Quest</strong> &bull;
+            View the <a href="https://github.com/twhitacre/1kquest">source code</a>. 
+            Data based on an export from <a href="https://itunes.apple.com/us/app/strong-workout-tracker-training/id464254577">Strong</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    
     <script src="js/bundle.min.js"></script>
   </body>
 </html>

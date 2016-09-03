@@ -7,20 +7,24 @@ class App {
     this.elems = elems;
     this.quest = new Quest().init(results);
     this.dash = new Dashboard();
-    console.log(this.quest);
   }
 
   init () {
+    this.loadProgress();
     this.loadStats();
     this.loadCharts();
   }
 
+  loadProgress () {
+    this.dash.displayProgress(this.elems.stats.progress, this.quest.quest);
+  }
+
   loadStats () {
-    this.dash.displayStat(this.elems.stats.quest, `${this.quest.quest} lbs`);
-    this.dash.displayStat(this.elems.stats.bench, `${this.quest.bench.max} lbs`);
-    this.dash.displayStat(this.elems.stats.squat, `${this.quest.squat.max} lbs`);
-    this.dash.displayStat(this.elems.stats.dead, `${this.quest.dead.max} lbs`);
-    this.dash.displayStat(this.elems.stats.statLifted, `${this.quest.totalWeight} lbs`);
+    this.dash.displayStat(this.elems.stats.quest, `${this.quest.quest}lbs`);
+    this.dash.displayStat(this.elems.stats.bench, `${this.quest.bench.max}lbs`);
+    this.dash.displayStat(this.elems.stats.squat, `${this.quest.squat.max}lbs`);
+    this.dash.displayStat(this.elems.stats.dead, `${this.quest.dead.max}lbs`);
+    this.dash.displayStat(this.elems.stats.statLifted, `${this.quest.totalWeight}lbs`);
     this.dash.displayStat(this.elems.stats.statWorkouts, this.quest.totalWorkouts);
   }
 

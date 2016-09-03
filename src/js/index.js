@@ -8,6 +8,7 @@ import App from './classes/app';
 // Set Elements Id's
 const elems = {
   stats : {
+    progress: 'progress',
     quest: 'stat-quest',
     bench: 'stat-bench',
     squat: 'stat-squat',
@@ -16,8 +17,7 @@ const elems = {
     statWorkouts: 'stat-workouts'
   },
   charts: {
-    chartQuest: 'chart-quest',
-    chartWeight: 'chart-weight'
+    chartQuest: 'chart-quest'
   }
 };
 

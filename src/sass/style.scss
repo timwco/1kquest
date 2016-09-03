@@ -1,6 +1,42 @@
 @import "normalize.css";
+
+$primary: #8ecc3b;
+$info: #5C80BC;
+$success: #4B8F8C;
+$dark: #2C4251;
+$light: #FCFCFC;
+
 @import "bulma";
+
+
+
+img  { max-width: 100%; max-height: 100%; }
+
+a, a:hover { color: $success !important; }
+.footer a:not(.icon), .footer a:visited:not(.icon) {
+  border-bottom: 1px solid $success;
+  &:hover {
+    border-bottom: 1px solid $success;
+  }
+}
+
+.notification.is-primary {
+  padding: 20px; 
+}
+
+.container {
+  padding: 0 15px;
+}
+
+.logo {
+  height: 75px;
+  margin: 15px 0;
+}
 
 .welcome {
   margin: 25px 0;
+}
+
+#progress {
+  margin-bottom: 25px;
 }

@@ -10,6 +10,13 @@ class Dashboard {
     }
   }
 
+  displayProgress (location, stat) {
+    let elem = document.getElementById(location);
+    elem.innerHTML = `
+      <progress class="progress is-info" value="${stat}" max="1000"></progress>
+    `;
+  }
+
   displayStat (location, stat) {
     const elem = document.getElementById(location);
     elem.innerHTML = stat;
@@ -27,22 +34,22 @@ class Dashboard {
           label: quest.bench.name,
           fill: false,
           data: quest.bench.dataset.sort(),
-          backgroundColor: '#51b6c3',
-          borderColor: '#51b6c3',
+          backgroundColor: '#8ecc3b',
+          borderColor: '#8ecc3b',
         },
         {
           label: quest.squat.name,
           fill: false,
           data: quest.squat.dataset.sort(),
-          backgroundColor: '#fb6080',
-          borderColor: '#fb6080',
+          backgroundColor: '#5C80BC',
+          borderColor: '#5C80BC',
         },
         {
           label: quest.dead.name,
           fill: false,
           data: quest.dead.dataset.sort(),
-          backgroundColor: '#97c475',
-          borderColor: '#97c475'
+          backgroundColor: '#2C4251',
+          borderColor: '#2C4251'
         }
       ]
     };
