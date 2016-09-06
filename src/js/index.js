@@ -22,7 +22,7 @@ const elems = {
 };
 
 // CSV URL
-const url = 'https://dl.dropboxusercontent.com/s/xv78m80mxbmnqdc/strong.csv';
+const url = 'https://dl.dropboxusercontent.com/s/9wjmtxtnq9fsimx/strong.csv';
 
 
 // Download our data, parse it to JSON, then initialize the app.
