@@ -1,5 +1,4 @@
 import Papa from 'papaparse';
-import Chart from 'chart.js';
 
 // Classes
 import App from './classes/app';
@@ -22,7 +21,7 @@ const elems = {
 };
 
 // CSV URL
-const url = 'https://dl.dropboxusercontent.com/s/9wjmtxtnq9fsimx/strong.csv';
+const url = 'https://dl.dropboxusercontent.com/s/ysbufta2debgs7q/strong.csv';
 
 
 // Download our data, parse it to JSON, then initialize the app.
@@ -30,4 +29,20 @@ Papa.parse(url, { header: true, download: true, complete: start });
 
 
 // Create our App
-function start (results) { new App(elems, results).init() }
+function start (results) { 
+  // There's a story here, @me if you are curious :D
+  const fakeDeadlift = {
+    'Date': '2019-01-23 05:20:00',
+    'Distance': '0',
+    'Exercise Name': 'Deadlift',
+    'Notes': '',
+    'Reps': '12',
+    'Seconds': '0',
+    'Set Order': '1',
+    'Weight': '225',
+    'Workout Name': '',
+    'Workout Notes': ''
+  };
+  results.data.push(fakeDeadlift);
+  new App(elems, results).init(); 
+}

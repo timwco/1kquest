@@ -2,32 +2,32 @@
 
 // Require our Gulp Plugins
 const gulp        = require('gulp'),
-      sourcemaps  = require('gulp-sourcemaps'),
-      source      = require('vinyl-source-stream'),
-      buffer      = require('vinyl-buffer'),
-      browserify  = require('browserify'),
-      notify      = require('gulp-notify'),
-      babel       = require('babelify'),
-      chalk       = require('chalk'),
-      sass        = require('gulp-sass'),
-      sassImport  = require('sass-module-importer'),
-      plumber     = require('gulp-plumber'),
-      watch       = require('gulp-watch'),
-      browserSync = require('browser-sync').create();
+    sourcemaps  = require('gulp-sourcemaps'),
+    source      = require('vinyl-source-stream'),
+    buffer      = require('vinyl-buffer'),
+    browserify  = require('browserify'),
+    notify      = require('gulp-notify'),
+    babel       = require('babelify'),
+    chalk       = require('chalk'),
+    sass        = require('gulp-sass'),
+    sassImport  = require('sass-module-importer'),
+    plumber     = require('gulp-plumber'),
+    watch       = require('gulp-watch'),
+    browserSync = require('browser-sync').create();
 
 // Function to handle errors.
 // Prevents Gulp from stopping.
 var handleError = function(err) {
-  notify.onError("Error, check terminal for details.")(err);
-  console.log(chalk.white.bgRed(' <error> ------------------------ '));
-  console.log(chalk.white(err.message));
-  console.log(chalk.white.bgRed(' </error> ----------------------- '));
-  this.emit('end');
-}
+    notify.onError('Error, check terminal for details.')(err);
+    console.log(chalk.white.bgRed(' <error> ------------------------ '));
+    console.log(chalk.white(err.message));
+    console.log(chalk.white.bgRed(' </error> ----------------------- '));
+    this.emit('end');
+};
 
 // Converts SASS into CSS
 gulp.task('sass', () => {
-  gulp.src('./src/sass/style.scss')
+    gulp.src('./src/sass/style.scss')
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(sass({ importer: sassImport() }).on('error', handleError))
     .pipe(sourcemaps.write('./'))
@@ -36,7 +36,7 @@ gulp.task('sass', () => {
 
 // Converts ES2015+ to ES5 & Supports Modules
 gulp.task('browserify', () => {
-  return browserify('./src/js/index.js', {debug: true})
+    return browserify('./src/js/index.js', {debug: true})
     .transform(babel)
     .bundle()
     .on('error', handleError)
@@ -49,19 +49,19 @@ gulp.task('browserify', () => {
 
 // Watches our .scss & .js files for change
 gulp.task('watch', () => {
-  watch('./src/sass/**/*.scss', () => { gulp.start('sass'); });
-  watch(['./src/js/**/*.js', './package.json'], () => { gulp.start('browserify'); });
-  watch('./app/**/**', () => { browserSync.reload(); });
+    watch('./src/sass/**/*.scss', () => { gulp.start('sass'); });
+    watch(['./src/js/**/*.js', './package.json'], () => { gulp.start('browserify'); });
+    watch('./app/**/**', () => { browserSync.reload(); });
 });
 
 // Runs a simple browser sync server
-gulp.task('server', function(done) {
-  browserSync.init({
-    server: "./app",
-    port: 8080,
-    open: false,
-    notify: false
-  });
+gulp.task('server', function() {
+    browserSync.init({
+        server: './app',
+        port: 8080,
+        open: false,
+        notify: false
+    });
 });
 
 // Builds our app
