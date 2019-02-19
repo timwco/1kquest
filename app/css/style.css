@@ -4205,6 +4205,9 @@ a, a:hover {
 .notification.is-primary {
   padding: 20px; }
 
+.app {
+  display: none; }
+
 .container {
   padding: 0 15px; }
 
@@ -4219,10 +4222,7 @@ a, a:hover {
   margin-bottom: 25px; }
 
 .loading {
-  width: 50px;
-  position: absolute;
-  top: 11px;
-  right: 11px;
-  z-index: 9999999; }
+  text-align: center;
+  margin-top: 100px; }
 
 /*# sourceMappingURL=style.css.map */

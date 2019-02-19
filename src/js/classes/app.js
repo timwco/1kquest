@@ -7,14 +7,17 @@ class App {
     this.elems = elems;
     this.quest = new Quest().init(results);
     this.dash = new Dashboard();
+    this.loader = document.querySelector('#initial'); 
+    this.appScreen = document.querySelector('.app');
   }
 
   init () {
     this.loadProgress();
     this.loadStats();
-    this.loadCharts();
     // Loaded, Hide Spinner
-    document.querySelector('#loading').style.display = 'none';
+    this.hide(this.loader);
+    this.fadeIn(this.appScreen);
+    this.loadCharts();
   }
 
   loadProgress () {
@@ -33,6 +36,22 @@ class App {
   loadCharts () {
     this.dash.displayChart('quest', this.elems.charts.chartQuest, this.quest);
   }
+
+  fadeIn(el) {
+    el.style.opacity = 0;
+    el.style.display = 'block';
+    let last = +new Date();
+    const tick = function() {
+      el.style.opacity = +el.style.opacity + (new Date() - last) / 400;
+      last = +new Date();
+      if (+el.style.opacity < 1) {
+        (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+      }
+    };
+    tick();
+  }
+
+  hide(el) { el.style.display = 'none'; }
 
 }
 export default App;

@@ -26,6 +26,10 @@ a, a:hover { color: $success !important; }
   padding: 20px; 
 }
 
+.app {
+ display: none; // Initially
+}
+
 .container {
   padding: 0 15px;
 }
@@ -44,9 +48,6 @@ a, a:hover { color: $success !important; }
 }
 
 .loading {
-  width: 50px;
-  position: absolute;
-  top: 11px;
-  right: 11px;
-  z-index: 9999999;
+  text-align: center;
+  margin-top: 100px;  
 }
