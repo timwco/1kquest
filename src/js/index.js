@@ -23,7 +23,7 @@ const elems = {
 // CSV URL
 // Tends to be buggy
 // const url = 'https://dl.dropboxusercontent.com/s/ysbufta2debgs7q/strong.csv';
-const file = '../data/strong.csv';
+const file = 'data/strong.csv';
 
 
 // Download our data, parse it to JSON, then initialize the app.
