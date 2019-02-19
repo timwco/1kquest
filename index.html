@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div class="container">
+    <div class="loading" id="initial">
+        <img src="images/loading.gif" >
+    </div>
+    <div class="container app">
       <div class="logo">
         <img src="images/logo.png" alt="1k Quest">
-        <img src="images/loading.gif" id="loading" class="loading">
       </div>
       <div id="progress"></div>
       <div class="tile is-ancestor">
@@ -39,11 +41,6 @@
       <div class="tile is-ancestor">
         <div class="tile is-parent">
           <article class="tile is-child box">
-            <canvas id="chart-quest" width="700" height="300"></canvas>
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child box">
             <div class="content">
               <p class="title">About</p>
               <p class="subtitle">What is 1k Quest?</p>
@@ -54,6 +51,11 @@
             </div>
           </article>
         </div>
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <canvas id="chart-quest" width="700" height="300"></canvas>
+          </article>
+        </div>        
       </div>
 
       <div class="tile is-ancestor">
