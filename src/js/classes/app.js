@@ -13,6 +13,8 @@ class App {
     this.loadProgress();
     this.loadStats();
     this.loadCharts();
+    // Loaded, Hide Spinner
+    document.querySelector('#loading').style.display = 'none';
   }
 
   loadProgress () {
