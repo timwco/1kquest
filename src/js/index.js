@@ -46,6 +46,7 @@ function start (results) {
     'Workout Notes': ''
   };
   results.data.push(fakeDeadlift);
+  alert(`COMPLETE: ${results.data.length}`);
   new App(elems, results).init(); 
 }
 
