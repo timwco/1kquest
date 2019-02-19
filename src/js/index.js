@@ -21,11 +21,13 @@ const elems = {
 };
 
 // CSV URL
-const url = 'https://dl.dropboxusercontent.com/s/ysbufta2debgs7q/strong.csv';
+// Tends to be buggy
+// const url = 'https://dl.dropboxusercontent.com/s/ysbufta2debgs7q/strong.csv';
+const file = '../data/strong.csv';
 
 
 // Download our data, parse it to JSON, then initialize the app.
-Papa.parse(url, { header: true, download: true, complete: start });
+Papa.parse(file, { header: true, download: true, complete: start, error: fail });
 
 
 // Create our App
@@ -45,4 +47,10 @@ function start (results) {
   };
   results.data.push(fakeDeadlift);
   new App(elems, results).init(); 
+}
+
+// Track Errors
+function fail (err) {
+  alert(`ERROR: ${err}`);
+  console.log('ERROR', err);
 }
