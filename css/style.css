@@ -4218,4 +4218,11 @@ a, a:hover {
 #progress {
   margin-bottom: 25px; }
 
+.loading {
+  width: 50px;
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  z-index: 9999999; }
+
 /*# sourceMappingURL=style.css.map */
