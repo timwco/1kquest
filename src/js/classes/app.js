@@ -1,11 +1,10 @@
-import Quest from './quest';
 import Dashboard from './dashboard';
 
 class App {
 
   constructor (elems, results) {
     this.elems = elems;
-    this.quest = new Quest().init(results);
+    this.quest = results;
     this.dash = new Dashboard();
     this.loader = document.querySelector('#initial'); 
     this.appScreen = document.querySelector('.app');
