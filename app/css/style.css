@@ -4225,4 +4225,20 @@ a, a:hover {
   text-align: center;
   margin-top: 100px; }
 
+#calendar {
+  overflow: hidden;
+  background-color: #FCFCFC;
+  width: 400px;
+  padding: 25px; }
+  #calendar table {
+    width: 330px;
+    margin: 0 auto; }
+  #calendar .jsCalendar-selected {
+    background-color: #8ecc3b !important;
+    color: #FCFCFC; }
+  #calendar .jsCalendar-current {
+    border-color: #5C80BC !important; }
+  #calendar .jsCalendar-selected.jsCalendar-current {
+    color: #FCFCFC !important; }
+
 /*# sourceMappingURL=style.css.map */

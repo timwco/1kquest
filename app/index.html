@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1K Quest</title>
+    <link rel="stylesheet" href="css/jsCalendar.min.css">
+    <link rel="stylesheet" href="css/jsCalendar.clean.min.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -66,7 +68,10 @@
         </div>
         <div class="tile is-parent">
           <article class="tile is-child box">
-            <p class="title">Workouts Completed: <strong id="stat-workouts"></strong></p>
+            <p class="title">
+              Workouts Completed: <strong id="stat-workouts"></strong>
+              <small><a href="#" class="modal-open">(View)</a></small>
+            </p>
           </article>
         </div>
       </div>
@@ -86,7 +91,14 @@
         </div>
       </div>
     </footer>
+
+    <div class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content clean-theme" id="calendar"></div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
     
+    <script src="js/jsCalendar.min.js"></script>
     <script src="js/bundle.min.js"></script>
   </body>
 </html>

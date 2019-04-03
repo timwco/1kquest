@@ -2,6 +2,17 @@ import Chart from 'chart.js';
 
 class Dashboard {
 
+  displayCalendar(location, days) {
+    const calendar = jsCalendar.new(location, "now", {
+      "navigatorPosition": "right",
+      "monthFormat": "month YYYY",
+      "fdotw": "2",
+      "firstDayOfTheWeek": "2"
+    });
+    console.log('DAYS', days);
+    calendar.select(days);    
+  }
+
   displayChart (type, location, quest) {
     switch (type) {
     case 'quest':

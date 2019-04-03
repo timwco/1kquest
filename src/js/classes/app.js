@@ -8,11 +8,13 @@ class App {
     this.dash = new Dashboard();
     this.loader = document.querySelector('#initial'); 
     this.appScreen = document.querySelector('.app');
+    this.calendarEl = document.querySelector('#calendar');
   }
 
   init () {
     this.loadProgress();
     this.loadStats();
+    this.loadCalendar();
     // Loaded, Hide Spinner
     this.hide(this.loader);
     this.fadeIn(this.appScreen);
@@ -32,6 +34,10 @@ class App {
     this.dash.displayStat(this.elems.stats.statWorkouts, this.quest.totalWorkouts);
   }
 
+  loadCalendar () {
+    this.dash.displayCalendar(this.calendarEl, this.quest.workoutDays);
+  }
+
   loadCharts () {
     this.dash.displayChart('quest', this.elems.charts.chartQuest, this.quest);
   }
@@ -48,6 +54,15 @@ class App {
       }
     };
     tick();
+    this.loadModal();
+  }
+
+  loadModal() {
+    const show = document.querySelector('.modal-open');
+    const hide = document.querySelector('.modal-close');
+    const modal = document.querySelector('.modal');
+    show.addEventListener('click', () => modal.classList.add('is-active'))
+    hide.addEventListener('click', () => modal.classList.remove('is-active'))
   }
 
   hide(el) { el.style.display = 'none'; }
