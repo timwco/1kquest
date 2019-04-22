@@ -43,21 +43,18 @@
       <div class="tile is-ancestor">
         <div class="tile is-parent">
           <article class="tile is-child box">
+            <canvas id="chart-quest" width="700" height="300"></canvas>
+          </article>
+        </div>            
+        <div class="tile is-parent">
+          <article class="tile is-child box blue-bg">
             <div class="content">
-              <p class="title">About</p>
-              <p class="subtitle">What is 1k Quest?</p>
-              <div class="content">
-                <p>It's 2019, and I'd like to get stronger. I used to lift weights in high school, but gave it up during my freshman year of college. When I first went back, I didn't really have anything to keep me motivated. That's when I decided i wanted to lift 1000lbs between bench press, squat and dead lifts.</p>
-                <p>This is my journey.</p>
-              </div>
+              <p class="title centered">Weight Goal</p>
+              <p class="subtitle centered">Lose 15%</p>
+              <p class="percentage" id="stat-weight"></p>
             </div>
           </article>
         </div>
-        <div class="tile is-parent">
-          <article class="tile is-child box">
-            <canvas id="chart-quest" width="700" height="300"></canvas>
-          </article>
-        </div>        
       </div>
 
       <div class="tile is-ancestor">
@@ -70,7 +67,6 @@
           <article class="tile is-child box">
             <p class="title">
               Workouts Completed: <strong id="stat-workouts"></strong>
-              <small><a href="#" class="modal-open">(View)</a></small>
             </p>
           </article>
         </div>
@@ -81,21 +77,35 @@
       <div class="container">
         <div class="content has-text-centered">
           <p>
-            <strong>1K Quest</strong> &bull;
-            View the <a href="https://github.com/twhitacre/1kquest">source code</a>. 
-            <br />
-            Workouts Tracked with <a href="https://itunes.apple.com/us/app/strong-workout-tracker-training/id464254577">Strong</a>
-            <br />
-            App Version: <strong>1.2.0</strong>
+            <a href="#" class="modal-open" data-modal="modal-about">About</a> &bull; 
+            <a href="#" class="modal-open" data-modal="modal-calendar">Workout Calendar</a> &bull; <a href="https://github.com/twhitacre/1kquest">Source Code</a>
+            <br /><br />
+            Updated <strong id="updated-at">...</strong>
           </p>
         </div>
       </div>
     </footer>
 
-    <div class="modal">
+    <div class="modal" id="modal-calendar">
       <div class="modal-background"></div>
       <div class="modal-content clean-theme" id="calendar"></div>
-      <button class="modal-close is-large" aria-label="close"></button>
+      <button class="modal-close is-large" data-modal="modal-calendar"></button>
+    </div>
+
+    <div class="modal" id="modal-about">
+      <div class="modal-background"></div>
+      <div class="modal-content clean-theme">
+        <article class="tile is-child box">
+            <div class="content">
+              <p class="title">About 1K Quest</p>
+              <div class="content">
+                <p>It's 2019, and I'd like to get stronger. I used to lift weights in high school, but gave it up during my freshman year of college. When I first went back, I didn't really have anything to keep me motivated. That's when I decided i wanted to lift 1000lbs between bench press, squat and dead lifts.</p>
+                <p>Also, periodically I'll set weight goals for myself. Right now, it's to lose 15% of my weight.</p>
+              </div>
+            </div>
+          </article>
+      </div>
+      <button class="modal-close is-large" data-modal="modal-about"></button>      
     </div>
     
     <script src="js/jsCalendar.min.js"></script>
