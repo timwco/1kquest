@@ -13,11 +13,13 @@ const elems = {
     squat: 'stat-squat',
     dead:  'stat-dead',
     statLifted: 'stat-lifted',
-    statWorkouts: 'stat-workouts'
+    statWorkouts: 'stat-workouts',
+    statWeight: 'stat-weight',
   },
   charts: {
     chartQuest: 'chart-quest'
-  }
+  },
+  updatedAt: 'updated-at',
 };
 
 // Data URL

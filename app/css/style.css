@@ -4241,4 +4241,22 @@ a, a:hover {
   #calendar .jsCalendar-selected.jsCalendar-current {
     color: #FCFCFC !important; }
 
+.blue-bg {
+  background-color: #5C80BC;
+  color: #FCFCFC;
+  min-width: 300px; }
+  .blue-bg p.title, .blue-bg p.subtitle {
+    color: #FCFCFC; }
+
+.percentage {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 20%;
+  color: #FCFCFC;
+  background-color: #5C80BC;
+  border-radius: 15px; }
+
+.centered {
+  text-align: center; }
+
 /*# sourceMappingURL=style.css.map */

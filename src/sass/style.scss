@@ -72,3 +72,24 @@ a, a:hover { color: $success !important; }
     color: $light !important;
   }
 }
+
+.blue-bg {
+  background-color: $info;
+  color: $light;
+  min-width: 300px;
+  p.title, p.subtitle {
+    color: $light;
+  }
+}
+
+.percentage {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 20%;
+  color: $light;
+  background-color: $info;
+  border-radius: 15px;  
+}
+.centered {
+  text-align: center;
+}

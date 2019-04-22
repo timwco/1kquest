@@ -1,4 +1,5 @@
 import Chart from 'chart.js';
+import moment from 'moment';
 
 class Dashboard {
 
@@ -9,7 +10,6 @@ class Dashboard {
       "fdotw": "2",
       "firstDayOfTheWeek": "2"
     });
-    console.log('DAYS', days);
     calendar.select(days);    
   }
 
@@ -32,6 +32,18 @@ class Dashboard {
     const elem = document.getElementById(location);
     elem.innerHTML = stat;
   }
+
+  displayUpdateAt (location, date) {
+    const elem = document.getElementById(location);
+    const updatedAt = moment(Number(date)).format('MMMM D, YYYY');
+    elem.innerHTML = updatedAt;
+  }
+
+  displayWeightGoal (location, percentage) {
+    const elem = document.getElementById(location);
+    const rounded = Math.round(percentage * 100) / 100;
+    elem.innerHTML = `${rounded}%`;
+  }  
 
   // Specific Charts
   questChart (location, quest) {

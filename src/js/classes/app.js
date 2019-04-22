@@ -32,6 +32,8 @@ class App {
     this.dash.displayStat(this.elems.stats.dead, `${this.quest.dead.max}lbs`);
     this.dash.displayStat(this.elems.stats.statLifted, `${this.quest.totalWeight}lbs`);
     this.dash.displayStat(this.elems.stats.statWorkouts, this.quest.totalWorkouts);
+    this.dash.displayUpdateAt(this.elems.updatedAt, this.quest.lastUpdated);
+    this.dash.displayWeightGoal(this.elems.stats.statWeight, this.quest.weightGoal);
   }
 
   loadCalendar () {
@@ -58,11 +60,27 @@ class App {
   }
 
   loadModal() {
-    const show = document.querySelector('.modal-open');
-    const hide = document.querySelector('.modal-close');
-    const modal = document.querySelector('.modal');
-    show.addEventListener('click', () => modal.classList.add('is-active'))
-    hide.addEventListener('click', () => modal.classList.remove('is-active'))
+    const show = document.querySelectorAll('.modal-open');
+    const hide = document.querySelectorAll('.modal-close');
+
+    Array.from(show).forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const klass = link.dataset.modal;
+        const modal = document.querySelector(`#${klass}`);
+        modal.classList.add('is-active');
+      });
+    });    
+
+    Array.from(hide).forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const klass = link.dataset.modal;
+        const modal = document.querySelector(`#${klass}`);
+        modal.classList.remove('is-active');
+      });
+    });
+
   }
 
   hide(el) { el.style.display = 'none'; }
