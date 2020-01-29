@@ -1,114 +1,120 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1K Quest</title>
-    <link rel="stylesheet" href="css/jsCalendar.min.css">
-    <link rel="stylesheet" href="css/jsCalendar.clean.min.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <div class="loading" id="initial">
-        <img src="images/loading.gif" >
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1K Quest</title>
+  <link rel="stylesheet" href="css/jsCalendar.min.css">
+  <link rel="stylesheet" href="css/jsCalendar.clean.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="loading" id="initial">
+    <img src="images/loading.gif">
+  </div>
+  <div class="container app">
+    <div class="logo">
+      <img src="images/logo.png" alt="1k Quest">
     </div>
-    <div class="container app">
-      <div class="logo">
-        <img src="images/logo.png" alt="1k Quest">
+    <div id="progress"></div>
+    <div class="tile is-ancestor">
+      <div class="tile is-parent">
+        <article class="tile is-child box notification is-primary">
+          <p class="title">TOTAL: <strong id="stat-quest"></strong></p>
+        </article>
       </div>
-      <div id="progress"></div>
-      <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          <article class="tile is-child box notification is-primary">
-            <p class="title">TOTAL: <strong id="stat-quest"></strong></p>
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child box">
-            <p class="title">Bench: <strong id="stat-bench"></strong></p>
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child box">
-            <p class="title">Squat: <strong id="stat-squat"></strong></p>
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child box">
-            <p class="title">Dead: <strong id="stat-dead"></strong></p>
-          </article>
-        </div>
-      </div>
-
-      <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          <article class="tile is-child box">
-            <canvas id="chart-quest" width="700" height="300"></canvas>
-          </article>
-        </div>            
-        <div class="tile is-parent">
-          <article class="tile is-child box blue-bg">
-            <div class="content">
-              <p class="title centered">Weight Goal</p>
-              <p class="subtitle centered">Lose 15%</p>
-              <p class="percentage" id="stat-weight"></p>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          <article class="tile is-child box">
-            <p class="title">Pounds Lifted: <strong id="stat-lifted"></strong></p>
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child box">
-            <p class="title">
-              Workouts Completed: <strong id="stat-workouts"></strong>
-            </p>
-          </article>
-        </div>
-      </div>
-    </div>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="content has-text-centered">
-          <p>
-            <a href="#" class="modal-open" data-modal="modal-about">About</a> &bull; 
-            <a href="#" class="modal-open" data-modal="modal-calendar">Workout Calendar</a> &bull; <a href="https://github.com/twhitacre/1kquest">Source Code</a>
-            <br /><br />
-            Updated <strong id="updated-at">...</strong>
-          </p>
-        </div>
-      </div>
-    </footer>
-
-    <div class="modal" id="modal-calendar">
-      <div class="modal-background"></div>
-      <div class="modal-content clean-theme" id="calendar"></div>
-      <button class="modal-close is-large" data-modal="modal-calendar"></button>
-    </div>
-
-    <div class="modal" id="modal-about">
-      <div class="modal-background"></div>
-      <div class="modal-content clean-theme">
+      <div class="tile is-parent">
         <article class="tile is-child box">
-            <div class="content">
-              <p class="title">About 1K Quest</p>
-              <div class="content">
-                <p>It's 2019, and I'd like to get stronger. I used to lift weights in high school, but gave it up during my freshman year of college. When I first went back, I didn't really have anything to keep me motivated. That's when I decided i wanted to lift 1000lbs between bench press, squat and dead lifts.</p>
-                <p>Also, periodically I'll set weight goals for myself. Right now, it's to lose 15% of my weight.</p>
-              </div>
-            </div>
-          </article>
+          <p class="title">Bench: <strong id="stat-bench"></strong></p>
+        </article>
       </div>
-      <button class="modal-close is-large" data-modal="modal-about"></button>      
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <p class="title">Squat: <strong id="stat-squat"></strong></p>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <p class="title">Dead: <strong id="stat-dead"></strong></p>
+        </article>
+      </div>
     </div>
-    
-    <script src="js/jsCalendar.min.js"></script>
-    <script src="js/bundle.min.js"></script>
-  </body>
+
+    <div class="tile is-ancestor">
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <canvas id="chart-quest" width="700" height="300"></canvas>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box blue-bg">
+          <div class="content">
+            <p class="title centered">Weight Goal</p>
+            <p class="subtitle centered">Lose 15%</p>
+            <p class="percentage" id="stat-weight"></p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="tile is-ancestor">
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <p class="title">Pounds Lifted: <strong id="stat-lifted"></strong></p>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <p class="title">
+            Workouts Completed: <strong id="stat-workouts"></strong>
+          </p>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          <a href="#" class="modal-open" data-modal="modal-about">About</a> &bull;
+          <a href="#" class="modal-open" data-modal="modal-calendar">Workout Calendar</a> &bull; <a
+            href="https://github.com/twhitacre/1kquest">Source Code</a>
+          <br /><br />
+          Updated <strong id="updated-at">...</strong>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal-calendar">
+    <div class="modal-background"></div>
+    <div class="modal-content clean-theme" id="calendar"></div>
+    <button class="modal-close is-large" data-modal="modal-calendar"></button>
+  </div>
+
+  <div class="modal" id="modal-about">
+    <div class="modal-background"></div>
+    <div class="modal-content clean-theme">
+      <article class="tile is-child box">
+        <div class="content">
+          <p class="title">About 1K Quest</p>
+          <div class="content">
+            <p>It's 2020, and I'd like to get stronger. I used to lift weights in high school, but gave it up during my
+              freshman year of college. When I first went back, I didn't really have anything to keep me motivated.
+              That's when I decided i wanted to lift 1000lbs between bench press, squat and dead lifts.</p>
+            <p>Also, periodically I'll set weight goals for myself. Right now, it's to lose 15% of my weight.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+    <button class="modal-close is-large" data-modal="modal-about"></button>
+  </div>
+
+  <script src="js/jsCalendar.min.js"></script>
+  <script src="js/bundle.min.js"></script>
+</body>
+
 </html>
