@@ -47,6 +47,6 @@
     "lodash": ">=4.17.11",
     "moment": ">=2.19.3",
     "normalize.css": "4.2.0",
-    "papaparse": "4.1.2"
+    "papaparse": "5.2.0"
   }
 }
