@@ -43,7 +43,7 @@
     "@fullcalendar/core": "4.0.2",
     "axios": "0.18.0",
     "bulma": "0.1.2",
-    "chart.js": "2.2.2",
+    "chart.js": "2.9.4",
     "lodash": ">=4.17.11",
     "moment": ">=2.19.3",
     "normalize.css": "4.2.0",
